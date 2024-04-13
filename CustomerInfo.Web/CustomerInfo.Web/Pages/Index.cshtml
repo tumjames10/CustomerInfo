@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Customer Info</h1>
+
+    
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <h2>Customer Lists</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Date of Birth</th>
+                <th>Address</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cst in Model.Customers)
+            {
+                <tr>
+                    <td>@cst.FirstName @cst.MiddleName @cst.LastName</td>
+                    <td>@cst.DateOfBirth.ToShortDateString() </td>
+                    <td>@cst.Street @cst.City @cst.Province @cst.Country</td>
+                    <td><a asp-page="Edit" asp-route-id="@cst.CustomerId">Edit</a></td>
+                    <td><a asp-page="Delete" asp-route-id="@cst.CustomerId">Delete</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

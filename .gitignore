@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CustomerInfo.Web/WebApplication1/bin/Debug/net6.0
+/CustomerInfo.Web/WebApplication1/obj
+/CustomerInfo.Web/.vs
+/CustomerInfo.Web/CustomerInfo.BusinessLogic/bin/Debug/net8.0
+/CustomerInfo.Web/CustomerInfo.BusinessLogic/obj
+/CustomerInfo.Web/CustomerInfo.Entity/bin/Debug/net8.0
+/CustomerInfo.Web/CustomerInfo.Entity/obj
+/CustomerInfo.Web/CustomerInfo.Model/bin/Debug/net8.0
+/CustomerInfo.Web/CustomerInfo.Model/obj
+/CustomerInfo.Web/CustomerInfo.Repository/bin/Debug/net8.0
+/CustomerInfo.Web/CustomerInfo.Repository/obj
+/CustomerInfo.Web/CustomerInfo.Web/bin/Debug
+/CustomerInfo.Web/CustomerInfo.Web/obj

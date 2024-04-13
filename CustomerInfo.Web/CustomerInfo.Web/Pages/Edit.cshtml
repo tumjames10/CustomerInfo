@@ -1,0 +1,56 @@
+﻿@page "{id:int}"
+@model EditModel
+@{
+    ViewData["Title"] = "Edit page";
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Edit Customer Details</h1>
+
+    
+    <div>
+        <form method="post">
+            <label for="FirstName">Customer ID: @Model.Customer.CustomerId </label>
+
+            <label for="FirstName">First Name: </label>
+            <input type="text" id="FirstName" name="FirstName" value="@Model.Customer.FirstName" />
+            <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
+
+            <label for="MiddleName">Middle Name: </label>
+            <input type="text" id="middleName" name="middleName" value="@Model.Customer.MiddleName" />
+            <span asp-validation-for="Customer.MiddleName" class="text-danger"></span>
+
+            <label for="LastName">Last Name: </label>
+            <input type="text" id="LastName" name="LastName" value="@Model.Customer.LastName" />
+            <span asp-validation-for="Customer.LastName" class="text-danger"></span>
+
+
+            <label for="DateOfBirth">Date of Birth: </label>
+            <input type="date" id="DateOfBirth" name="DateOfBirth" value="@Model.Customer.DateOfBirth" />
+            <span asp-validation-for="Customer.DateOfBirth" class="text-danger"></span>
+
+            <br />
+            <p> Address </p>
+            <label for="Street">Street : </label>
+            <input type="text" id="Street" name="Street" value="@Model.Customer.Street" />
+            <span asp-validation-for="Customer.Street" class="text-danger"></span>
+
+            <label for="City">City : </label>
+            <input type="text" id="City" name="City" value="@Model.Customer.City" />
+            <span asp-validation-for="Customer.City" class="text-danger"></span>
+
+            <label for="ProvinceState">Province/State : </label>
+            <input type="text" id="Province" name="Province" value="@Model.Customer.Province" />
+            <span asp-validation-for="Customer.Province" class="text-danger"></span>
+
+            <label for="Country">Country : </label>
+            <input type="text" id="Country" name="Country" value="@Model.Customer.Country" />
+            <span asp-validation-for="Customer.Country" class="text-danger"></span>
+
+            <input type="submit" value="Save" />
+        </form>
+    </div>
+
+
+</div>

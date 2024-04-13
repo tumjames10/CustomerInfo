@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerInfo.Entity\CustomerInfo.Entity.csproj" />
+    <ProjectReference Include="..\CustomerInfo.Model\CustomerInfo.Model.csproj" />
+    <ProjectReference Include="..\CustomerInfo.Repository\CustomerInfo.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
