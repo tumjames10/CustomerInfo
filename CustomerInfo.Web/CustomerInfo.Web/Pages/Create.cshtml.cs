@@ -1,5 +1,5 @@
-using CustomerInfo.BusinessLogic.Interface;
 using CustomerInfo.Model;
+using CustomerInfo.Web.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,10 +8,10 @@ namespace CustomerInfo.Web.Pages
     public class CreateModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private readonly ICustomerService _customerService;
+        private readonly ICustomerServiceClient _customerService;
         private int customerID;
 
-        public CreateModel(ILogger<IndexModel> logger, ICustomerService customerService)
+        public CreateModel(ILogger<IndexModel> logger, ICustomerServiceClient customerService)
         {
             _logger = logger;
             _customerService = customerService;
@@ -27,7 +27,7 @@ namespace CustomerInfo.Web.Pages
                 return Page();
             }
 
-            Customer = _customerService.CreateCustomer(Customer);
+            Customer = _customerService.CreateCustomer(Customer).Result;
 
             return RedirectToPage("/Index");
         }

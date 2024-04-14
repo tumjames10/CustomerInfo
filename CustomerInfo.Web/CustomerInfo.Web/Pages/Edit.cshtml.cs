@@ -1,5 +1,5 @@
-using CustomerInfo.BusinessLogic.Interface;
 using CustomerInfo.Model;
+using CustomerInfo.Web.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,10 +8,10 @@ namespace CustomerInfo.Web.Pages
     public class EditModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private readonly ICustomerService _customerService;
+        private readonly ICustomerServiceClient _customerService;
         private int customerID;
 
-        public EditModel(ILogger<IndexModel> logger, ICustomerService customerService)
+        public EditModel(ILogger<IndexModel> logger, ICustomerServiceClient customerService)
         {
             _logger = logger;
             _customerService = customerService;
@@ -28,7 +28,7 @@ namespace CustomerInfo.Web.Pages
                 return RedirectToPage("/Error");
             }
 
-            Customer = _customerService.GetCustomerByID(id);
+            Customer = _customerService.GetCustomerByID(id).Result;
 
             return Page();
         }

@@ -1,5 +1,5 @@
-using CustomerInfo.BusinessLogic.Interface;
 using CustomerInfo.Model;
+using CustomerInfo.Web.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,9 +8,9 @@ namespace CustomerInfo.Web.Pages
     public class DeleteModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private readonly ICustomerService _customerService;
+        private readonly ICustomerServiceClient _customerService;
 
-        public DeleteModel(ILogger<IndexModel> logger, ICustomerService customerService)
+        public DeleteModel(ILogger<IndexModel> logger, ICustomerServiceClient customerService)
         {
             _logger = logger;
             _customerService = customerService;
@@ -27,7 +27,7 @@ namespace CustomerInfo.Web.Pages
                 RedirectToPage("/Error");
             }
 
-            Customer = _customerService.GetCustomerByID(id);
+            Customer = _customerService.GetCustomerByID(id).Result;
         }
 
         public IActionResult OnPost(int id)

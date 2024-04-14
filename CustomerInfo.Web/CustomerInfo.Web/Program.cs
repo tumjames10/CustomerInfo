@@ -1,19 +1,16 @@
-using CustomerInfo.BusinessLogic;
-using CustomerInfo.BusinessLogic.Interface;
-using CustomerInfo.Entity;
-using CustomerInfo.Repository;
-using CustomerInfo.Repository.Interface;
-using Microsoft.EntityFrameworkCore;
+using CustomerInfo.Web.Config;
+using CustomerInfo.Web.Services;
+using CustomerInfo.Web.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.Configure<ConfigSettings>(builder.Configuration.GetSection(nameof(ConfigSettings)));
 var connectionString = builder.Configuration.GetConnectionString("CustomerDatabase");
-builder.Services.AddDbContext<CustomerContext>(options => options.UseSqlServer(connectionString));
-builder.Services.AddScoped<IAddressRepository, AddressRepository>();
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<ICustomerServiceClient, CustomerServiceClient>();
+builder.Services.AddTransient<HttpClient>();
 
 var app = builder.Build();
 

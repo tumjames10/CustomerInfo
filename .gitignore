@@ -15,3 +15,5 @@
 /CustomerInfo.Web/CustomerInfo.Repository/obj
 /CustomerInfo.Web/CustomerInfo.Web/bin/Debug
 /CustomerInfo.Web/CustomerInfo.Web/obj
+/CustomerInfo.Web/CustomerInfo.Web.API/bin/Debug/net8.0
+/CustomerInfo.Web/CustomerInfo.Web.API/obj
