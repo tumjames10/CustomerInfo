@@ -33,7 +33,7 @@ namespace CustomerInfo.Web.Pages
             return Page();
         }
 
-        public IActionResult OnPost(int id)
+        public async Task<IActionResult> OnPost(int id)
         {
             if (!ModelState.IsValid)
             {
@@ -41,7 +41,7 @@ namespace CustomerInfo.Web.Pages
             }
 
             Customer.CustomerId = id;
-            _customerService.UpdateCustomer(Customer);
+            await _customerService.UpdateCustomer(Customer);
 
             return RedirectToPage("/Index");
         }

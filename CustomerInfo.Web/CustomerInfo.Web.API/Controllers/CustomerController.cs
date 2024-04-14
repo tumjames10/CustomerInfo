@@ -21,14 +21,12 @@ namespace CustomerInfo.Web.API.Controllers
             return _customerService.GetCustomers();
         }
 
-        // GET api/<DepartmentController>/5
         [HttpGet("{id}")]
         public Customer Get(int id)
         {
             return _customerService.GetCustomerByID(id);
         }
 
-        // POST api/<DepartmentController>
         [HttpPost]
         public IActionResult Post([FromBody] Customer value)
         {
@@ -41,7 +39,6 @@ namespace CustomerInfo.Web.API.Controllers
             return Ok(dept);
         }
 
-        // PUT api/<DepartmentController>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Customer value)
         {
@@ -57,7 +54,6 @@ namespace CustomerInfo.Web.API.Controllers
             return Ok(_customerService.UpdateCustomer(value));
         }
 
-        // DELETE api/<DepartmentController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

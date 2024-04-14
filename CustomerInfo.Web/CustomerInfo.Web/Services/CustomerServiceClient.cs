@@ -24,7 +24,7 @@ namespace CustomerInfo.Web.Services
             var serializeCustomer = JsonConvert.SerializeObject(customer);
             var requestContent = new StringContent(serializeCustomer, Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync(_settings.Value.CustomerEndPoint, requestContent); 
+            var response = await _httpClient.PostAsync(_settings.Value.CustomerEndPoint, requestContent);
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
@@ -72,6 +72,7 @@ namespace CustomerInfo.Web.Services
                 var content = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Customer>(content);
             }
+
             return null;
         }
     }
