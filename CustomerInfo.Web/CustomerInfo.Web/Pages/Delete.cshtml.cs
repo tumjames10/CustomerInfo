@@ -30,11 +30,11 @@ namespace CustomerInfo.Web.Pages
             Customer = _customerService.GetCustomerByID(id).Result;
         }
 
-        public IActionResult OnPost(int id)
+        public async Task<IActionResult> OnPost(int id)
         {
            
             Customer.CustomerId = id;
-            _customerService.DeleteCustomer(Customer);
+            await _customerService.DeleteCustomer(Customer);
 
             return RedirectToPage("/Index");
         }

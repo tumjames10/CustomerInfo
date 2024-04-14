@@ -12,9 +12,10 @@
     <div>
         <form method="post">
 
-                <label for="FirstName">First Name: </label>
+                <label class="form-label" for="FirstName">First Name: </label>
                 <input type="text" id="FirstName" name="FirstName" value="@Model.Customer.FirstName" />
-                <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
+                <span asp-validation-for="Customer.FirstName" class="text-danger">
+                </span>
 
             <label for="MiddleName">Middle Name: </label>
             <input type="text" id="middleName" name="middleName" value="@Model.Customer.MiddleName" />
@@ -47,7 +48,7 @@
             <input type="text" id="Country" name="Country" value="@Model.Customer.Country" />
             <span asp-validation-for="Customer.Country" class="text-danger"></span>
 
-            <input type="submit" value="Save" class="btn-primary"/>
+            <input type="submit" value="Save" class="btn btn-primary"/>
             <a asp-page="/Index" class="btn btn-secondary">Cancel</a>
 
         </form>
