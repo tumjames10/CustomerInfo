@@ -45,6 +45,11 @@ namespace CustomerInfo.Web.Pages
 
             return RedirectToPage("/Index");
         }
+
+        public IActionResult Cancel()
+        {
+            return RedirectToPage("/Index");
+        }
     }
 
 }

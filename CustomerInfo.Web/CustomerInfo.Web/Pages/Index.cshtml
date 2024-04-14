@@ -29,8 +29,8 @@
                     <td>@cst.FirstName @cst.MiddleName @cst.LastName</td>
                     <td>@cst.DateOfBirth.ToShortDateString() </td>
                     <td>@cst.Street @cst.City @cst.Province @cst.Country</td>
-                    <td><a asp-page="Edit" asp-route-id="@cst.CustomerId">Edit</a></td>
-                    <td><a asp-page="Delete" asp-route-id="@cst.CustomerId">Delete</a></td>
+                    <td><a asp-page="Edit" asp-route-id="@cst.CustomerId" class="btn btn-primary">Edit</a></td>
+                    <td><a asp-page="Delete" asp-route-id="@cst.CustomerId" class="btn btn-danger">Delete</a></td>
 
                 </tr>
             }

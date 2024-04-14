@@ -48,7 +48,8 @@
             <input type="text" id="Country" disabled name="Country" value="@Model.Customer.Country" />
             <span asp-validation-for="Customer.Country" class="text-danger"></span>
 
-            <input type="submit" value="Delete" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-page="/Index" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 
